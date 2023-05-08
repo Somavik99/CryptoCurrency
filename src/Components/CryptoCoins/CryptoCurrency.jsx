@@ -30,7 +30,7 @@ const CryptoCurrency = () => {
   return (
     <div>
       {isLoading ? (
-        <div>
+        <div className="Loading">
           <GridLoader color="#6e36d6" />
         </div>
       ) : (

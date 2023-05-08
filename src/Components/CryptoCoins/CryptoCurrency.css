@@ -3,5 +3,9 @@
   justify-content: center;
   align-items: center;
   grid-template-columns: repeat(5, 1fr);
-  row-gap: 10px;
+  row-gap: 20px;
+}
+
+.Loading{
+    
 }

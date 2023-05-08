@@ -15,8 +15,8 @@ const Card = ({ image, price, change, name }) => {
             <img
               src={image}
               alt="IMAGE"
-              style={{ width: "50px", height: "50px" }}
-              className="`Image`"
+              style={{ width: "70px", height: "70px" }}
+              className="Image"
             />
           </span>
 
