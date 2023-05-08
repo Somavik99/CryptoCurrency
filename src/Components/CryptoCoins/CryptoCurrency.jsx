@@ -43,6 +43,7 @@ const CryptoCurrency = () => {
                   price={Math.round(CryptoCoins.price)}
                   change={CryptoCoins.change}
                   name={CryptoCoins.name}
+                  color={CryptoCoins.color}
                 />
               </div>
             );
