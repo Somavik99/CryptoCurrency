@@ -1,13 +1,35 @@
-import "./Card.css"
+import "./Card.css";
 
-const Card = ({image,btcPrice,change}) => {
+const Card = ({ image, price, change, name }) => {
   return (
     <div>
-      <div>
-        <div className="Card">
-            <img src={image} alt="IMAGE" style={{width:"50px",height:"50px"}}/>
-            <div  style={{color:"black"}}>{name}</div>
-          <div>Bit Coin Price : {btcPrice}</div>
+      <div className="cardContainer">
+        <div className="card">
+          <span
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            <img
+              src={image}
+              alt="IMAGE"
+              style={{ width: "50px", height: "50px" }}
+              className="`Image`"
+            />
+          </span>
+
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            {name}
+          </div>
+          <div>Bit Coin Price : {price}</div>
           <div>Changing Rate : {change}</div>
         </div>
       </div>

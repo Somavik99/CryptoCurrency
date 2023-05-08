@@ -8,46 +8,46 @@ const CryptoCurrency = () => {
   const [crypto, setCrypto] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
-  const ViewCrypto = () => {
-    
-      setTimeout(async () => {
-        await axios.get("https://api.coinranking.com/v2/coins?limit=150").then(
-          (res) => {
-            console.log(res.data);
-            setCrypto(res.data.data.coins);
-          },
-          [5000]
-        );
+  const ViewCrypto = async () => {
+    await axios
+      .get("https://api.coinranking.com/v2/coins?limit=200")
+      .then((res) => {
+        console.log(res.data);
+        setCrypto(res.data.data.coins);
         setIsLoading(false);
-      }).
-    catch( (err) =>{
-      console.log(err);
-    })
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   };
 
   useEffect(() => {
-    ViewCrypto();
+    setTimeout(() => {
+      ViewCrypto();
+    }, 3500);
   }, []);
 
   return (
     <div>
       {isLoading ? (
-        <GridLoader color="#6e36d6" />
+        <div>
+          <GridLoader color="#6e36d6" />
+        </div>
       ) : (
-        <>
-         
+        <div className="Card_container">
           {crypto.map((CryptoCoins, index) => {
             return (
-              <div key={index} className="CoinsCard">
+              <div key={index} >
                 <Card
                   image={CryptoCoins.iconUrl}
-                  btcPrice={CryptoCoins.btcPrice}
+                  price={Math.round(CryptoCoins.price)}
                   change={CryptoCoins.change}
+                  name={CryptoCoins.name}
                 />
               </div>
             );
           })}
-        </>
+        </div>
       )}
     </div>
   );

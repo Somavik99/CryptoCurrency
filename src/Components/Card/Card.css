@@ -1,4 +1,20 @@
-.Card{
-    width: 100px;
-    height: 80px;
+.card{
+    width: 190px;
+    height: fit-content;
+    margin: 2%;
+    padding: 2%;
+   border: 2px solid black  ;
+}
+
+.Image{
+    border-radius: 50%;
+    background: transparent;
+   
+}
+
+.cardContainer{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
