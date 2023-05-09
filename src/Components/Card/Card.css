@@ -1,9 +1,11 @@
 .card {
   width: 190px;
+  font-weight: 600;
+  overflow: hidden;
   height: fit-content;
   margin: 2%;
   padding: 2%;
-  border: 2px solid rgb(11, 129, 238);
+  border: 2px solid rgb(27, 132, 251);
   border-radius: 0.5pc;
   background-image: linear-gradient(
     to right top,
@@ -13,11 +15,27 @@
     #001428,
     #021230
   );
-  box-shadow: 0.8rem 0.8rem 0.8rem rgba(125, 192, 255, 0.453);
+  /* box-shadow: 0.8rem 0.8rem 0.8rem rgba(125, 192, 255, 0.453); */
+  box-shadow: rgba(67, 152, 232, 0.47) 0rem 0.8rem 0.8rem   ;
   position: relative;
   transition: all 0.3s;
   transition-duration: 0.5s;
   padding: 25px;
+}
+
+.UrlContainer{
+    border: 2px solid white;
+    margin: 15px;
+    padding: 15px;
+    background-color: rgb(220, 255, 245);
+    border-radius: 0.9pc;
+    text-align: center;
+    transition:cubic-bezier(0.6, -0.28, 0.735, 0.045) 0.5s ease;
+}
+
+.UrlContainer:hover{
+  transform: scale(1);
+  background-color: ghostwhite;
 }
 
 .card:hover {
@@ -25,6 +43,7 @@
   z-index: 10;
 height: 300px;
   position: absolute;
+  overflow: visible;
 }
 
 .Image {

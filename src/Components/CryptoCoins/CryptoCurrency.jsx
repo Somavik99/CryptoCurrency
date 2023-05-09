@@ -44,6 +44,7 @@ const CryptoCurrency = () => {
                   change={CryptoCoins.change}
                   name={CryptoCoins.name}
                   color={CryptoCoins.color}
+                  coinrankingUrl={CryptoCoins.coinrankingUrl}
                 />
               </div>
             );
