@@ -1,8 +1,9 @@
 .card {
+  position: relative;
   width: 190px;
   font-weight: 600;
   overflow: hidden;
-  height: fit-content;
+  height: 300px;
   margin: 2%;
   padding: 2%;
   border: 2px solid rgb(27, 132, 251);
@@ -18,24 +19,27 @@
   /* box-shadow: 0.8rem 0.8rem 0.8rem rgba(125, 192, 255, 0.453); */
   box-shadow: rgba(67, 152, 232, 0.47) 0rem 0.8rem 0.8rem   ;
   position: relative;
-  transition: all 0.3s;
+  transition:  0.3s ease-in-out;
   transition-duration: 0.5s;
   padding: 25px;
+  z-index: 1;
 }
 
 .UrlContainer{
-    border: 2px solid white;
+    border: none;
     margin: 15px;
     padding: 15px;
-    background-color: rgb(220, 255, 245);
+    background-color: rgb(214, 189, 240);
     border-radius: 0.9pc;
     text-align: center;
-    transition:cubic-bezier(0.6, -0.28, 0.735, 0.045) 0.5s ease;
+    box-shadow: rgba(67, 152, 232, 0.47) 0rem 0.8rem 0.8rem;
+    transition: 0.5s ease;
 }
 
 .UrlContainer:hover{
   transform: scale(1);
-  background-color: ghostwhite;
+  background:whitesmoke ;
+  box-shadow: none,
 }
 
 .card:hover {
