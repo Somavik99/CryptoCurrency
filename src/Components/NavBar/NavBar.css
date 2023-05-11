@@ -1,0 +1,51 @@
+.Container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: sticky;
+  z-index: 10;
+  top: 0;
+}
+
+.CryptoInput:focus {
+  border: 2px solid #0066ff;
+}
+
+.MainNavContainer {
+    color: whitesmoke;
+  background-image: linear-gradient(
+    to right top,
+    #0c0d0dd9,
+    #001115d8,
+    #00141edd,
+    #001428ea,
+    #021230df
+  );
+  border: 2px solid rgb(27, 132, 251);
+  box-shadow: 2px 2px 2px rgb(0, 0, 0, 0.5);
+  margin: 2%;
+  border-radius: 10px;
+  margin-top: 2%;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  width: 85em;
+}
+
+h2 {
+  transition: 0.5s ease;
+}
+
+h2:hover {
+  transform: scale(1);
+  text-shadow: 0.1rem 0.1rem 0.1rem rgba(100, 100, 100, 0.737);
+}
+
+.CryptoContainer {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 20px;
+  margin-top: 13px;
+}
