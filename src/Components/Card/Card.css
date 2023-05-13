@@ -3,10 +3,9 @@
   width: 190px;
   font-weight: 600;
   overflow: hidden;
-  height: 250px;
+  height: 300px;
   margin: 2%;
   padding: 2%;
-  border: 1px solid rgb(27, 132, 251);
   border-radius: 0.5pc;
   background-image: linear-gradient(
     to right top,
@@ -44,8 +43,8 @@
 }
 
 .card:hover {
-  transform: scaleX(1);
-  transform-origin: bottom;
+  transform: scale(1.4);
+  transform-origin: top;
   z-index: 5;
 height: 300px;
   position:absolute;

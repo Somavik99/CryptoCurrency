@@ -7,10 +7,13 @@ import { GridLoader } from "react-spinners";
 const CryptoCurrency = () => {
   const [crypto, setCrypto] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+ 
 
   const ViewCrypto = async () => {
     await axios
-      .get("https://api.coinranking.com/v2/coins?limit=200")
+      .get(
+        `https://api.coinranking.com/v2/coins?limit=200`
+      )
       .then((res) => {
         console.log(res.data);
         setCrypto(res.data.data.coins);
@@ -25,7 +28,12 @@ const CryptoCurrency = () => {
     setTimeout(() => {
       ViewCrypto();
     }, 3500);
-  }, []);
+  }, [])
+
+
+
+
+
 
   return (
     <div>
@@ -37,7 +45,7 @@ const CryptoCurrency = () => {
         <div className="Card_container">
           {crypto.map((CryptoCoins, index) => {
             return (
-              <div key={index} >
+              <div key={index}>
                 <Card
                   image={CryptoCoins.iconUrl}
                   price={Math.round(CryptoCoins.price)}

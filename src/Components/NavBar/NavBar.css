@@ -15,14 +15,14 @@
     color: whitesmoke;
   background-image: linear-gradient(
     to right top,
-    #0c0d0dd9,
-    #001115d8,
-    #00141edd,
-    #001428ea,
-    #021230df
+    #0c0d0def,
+    #001115f0,
+    #00141ef2,
+    #001428f4,
+    #021230
   );
-  border: 2px solid rgb(27, 132, 251);
-  box-shadow: 2px 2px 2px rgb(0, 0, 0, 0.5);
+
+  box-shadow: 5px 3px 5px rgba(95, 141, 247, 0.901);
   margin: 2%;
   border-radius: 10px;
   margin-top: 2%;
@@ -37,8 +37,8 @@ h2 {
 }
 
 h2:hover {
-  transform: scale(1);
-  text-shadow: 0.1rem 0.1rem 0.1rem rgba(100, 100, 100, 0.737);
+  transform: scale(1.1);
+  /* text-shadow: 0.1rem 0.1rem 0.1rem rgba(171, 163, 163, 0.943); */
 }
 
 .CryptoContainer {
