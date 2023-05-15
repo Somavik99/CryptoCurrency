@@ -3,20 +3,21 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import Card from "../Card/Card";
 import { GridLoader } from "react-spinners";
+import LoadingAnimation from "./Loading/LoadingAnimation";
+
 
 const CryptoCurrency = () => {
   const [crypto, setCrypto] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
- 
+  const [loadAnimation, setLoadAnimation]= useState(true);
+  const [page, setPage] = useState(1);
 
   const ViewCrypto = async () => {
     await axios
-      .get(
-        `https://api.coinranking.com/v2/coins?limit=200`
-      )
+      .get(`https://api.coinranking.com/v2/coins?limit=20&_page=${page}`)
       .then((res) => {
         console.log(res.data);
-        setCrypto(res.data.data.coins);
+        setCrypto((prev) => [...prev, ...res.data.data.coins]);
         setIsLoading(false);
       })
       .catch((err) => {
@@ -28,14 +29,34 @@ const CryptoCurrency = () => {
     setTimeout(() => {
       ViewCrypto();
     }, 3500);
-  }, [])
+  }, [page]);
 
+  const handleInfiniteScrolling = async () => {
 
+    try {
+    
+        setTimeout(()=>{
+          if (
+            window.innerHeight +document.documentElement.scrollTop  + 1 >=
+            document.documentElement.scrollHeight 
+          ) {
+            setPage((prev) => prev + 1);
+            setLoadAnimation(false)
+          }
+          },4000)
 
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
-
+  useEffect(() => {
+    window.addEventListener("scroll", handleInfiniteScrolling);
+    return ()=> window.removeEventListener("scroll",handleInfiniteScrolling)
+  }, []);
 
   return (
+    <>
     <div>
       {isLoading ? (
         <div className="Loading">
@@ -54,12 +75,17 @@ const CryptoCurrency = () => {
                   color={CryptoCoins.color}
                   coinrankingUrl={CryptoCoins.coinrankingUrl}
                 />
+                   
               </div>
+          
             );
           })}
         </div>
       )}
+ 
     </div>
+    {loadAnimation && <LoadingAnimation className="Load"  />}
+</>
   );
 };
 
